@@ -1,7 +1,7 @@
 // src/controllers/authController.ts
 import { Request, Response } from 'express';
 import bcrypt from 'bcryptjs';
-import User from '../models/user';
+import User, { IUser } from '../models/user';
 import generateToken from '../utils/generateToken';
 import { RegisterRequestBody, LoginRequestBody } from '../types';
 
@@ -16,7 +16,7 @@ export const register = async (req: Request<{}, {}, RegisterRequestBody>, res: R
 
     const hashedPassword = await bcrypt.hash(password, 10);
 
-    const user = new User({
+    const user: IUser = new User({
       username,
       email,
       password: hashedPassword,
@@ -30,7 +30,7 @@ export const register = async (req: Request<{}, {}, RegisterRequestBody>, res: R
       username: user.username,
       email: user.email,
       role: user.role,
-      token: generateToken(user._id),
+      token: generateToken(user._id.toString()),  // Ensure the id is a string
     });
   } catch (error) {
     res.status(500).json({ message: 'Server error', error });
@@ -49,7 +49,7 @@ export const login = async (req: Request<{}, {}, LoginRequestBody>, res: Respons
         username: user.username,
         email: user.email,
         role: user.role,
-        token: generateToken(user._id),
+        token: generateToken(user._id.toString()),  // Ensure the id is a string
       });
     } else {
       res.status(400).json({ message: 'Invalid email or password' });
