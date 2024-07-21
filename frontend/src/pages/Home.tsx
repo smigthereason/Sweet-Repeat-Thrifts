@@ -1,6 +1,48 @@
 import React from 'react';
+import { Carousel } from 'react-responsive-carousel';
+import 'react-responsive-carousel/lib/styles/carousel.min.css'; 
 
 const Home: React.FC = () => {
+  const carouselItems = [
+    { src: "src/assets/new1.jpg", alt: "T-shirt Sale 1" },
+    { src: "src/assets/new2.jpg", alt: "T-shirt Sale 2" },
+    { src: "src/assets/new3.jpg", alt: "T-shirt Sale 3" },
+  ];
+
+  const newCarouselItems = [
+    { src: "src/assets/new1.jpg", alt: "T-shirt Sale 1" },
+    { src: "src/assets/new2.jpg", alt: "T-shirt Sale 2" },
+    { src: "src/assets/new3.jpg", alt: "T-shirt Sale 3" },
+  ];
+
+  const saleCarouselItems = [
+    { src: "src/assets/sale3.jpg", alt: "Wrap-Skirt Sale 1" },
+    { src: "src/assets/sale2.jpg", alt: "Wrap-Skirt Sale 2" },
+    { src: "src/assets/sale1.jpg", alt: "Wrap-Skirt Sale 3" },
+  ];
+
+  const renderCarousel = (items: any[], spanLabel: string, h3Label: string) => (
+    <Carousel
+      autoPlay
+      infiniteLoop
+      showThumbs={false}
+      showStatus={false}
+      interval={3000}
+      transitionTime={1000} 
+      className="w-96 h-auto"
+    >
+      {items.map((item, index) => (
+        <div key={index} className="relative">
+          <img src={item.src} alt={item.alt} className="w-96 h-auto object-cover" />
+          <div className="absolute top-32 left-28 text-center">
+            <span className="text-4xl font-bold text-red-600">{spanLabel}</span>
+            <h3 className="text-xl font-semibold text-white">{h3Label}</h3>
+          </div>
+        </div>
+      ))}
+    </Carousel>
+  );
+
   return (
     <section className="container mx-auto px-4">
       {/* Hero Banner */}
@@ -37,25 +79,14 @@ const Home: React.FC = () => {
       {/* Product Categories */}
       <div className="grid grid-cols-3 gap-3">
         <div className="relative">
-          <img src="src/assets/sale1.jpg" alt="Flash Sale" className="w-96 h-auto object-cover" />
-          <div className="absolute top-4 left-4">
-            <span className="text-4xl font-bold text-red-500">30%</span>
-            <h3 className="text-xl font-semibold">Flash Sale</h3>
-          </div>
+          {renderCarousel(carouselItems, "30%", "Flash Sale")}
         </div>
         <div className="relative">
-          <img src="src/assets/sale1.jpg" alt="New Arrivals" className="w-full h-64 object-cover" />
-          <div className="absolute top-4 left-4">
-            <span className="text-4xl font-bold text-red-500">New</span>
-            <h3 className="text-xl font-semibold">Arivals Product</h3>
-          </div>
+          {renderCarousel(newCarouselItems, "New Arrivals", "New Stock")}
         </div>
+       
         <div className="relative">
-          <img src="src/assets/sale1.jpg" alt="T-shirt Sale" className="w-full h-64 object-cover" />
-          <div className="absolute top-4 left-4">
-            <span className="text-4xl font-bold text-red-500">Hot</span>
-            <h3 className="text-xl font-semibold">Tsrt Sale</h3>
-          </div>
+          {renderCarousel(saleCarouselItems, "Hot", "Wrap-Skirt Sale")}
         </div>
       </div>
     </section>
