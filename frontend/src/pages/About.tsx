@@ -3,7 +3,7 @@ const About= () => {
       "rounded-lg p-6 bg-white shadow-lg ";
   
     return (
-      <div className="w-screen">
+      <div className="w-screen bg-black">
         <section
           className="bg-cover bg-center relative w-screen  mx-auto pt-15"
           style={{
