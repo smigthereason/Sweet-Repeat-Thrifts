@@ -2,59 +2,42 @@ import React, { useState } from "react";
 import { FaOpencart } from "react-icons/fa";
 import { SlUser } from "react-icons/sl";
 import { Link } from "react-router-dom";
+import { CiMenuBurger } from "react-icons/ci";
+import  Login  from './Login'
 
+
+import { IoSearchOutline } from "react-icons/io5";
 
 const Navbar: React.FC = () => {
   return (
-    <nav className="sticky top-0 bg-amber-50 shadow-md z-50 w-screen">
+    <nav className="sticky top-0 bg-customBrown shadow-md z-50 w-full">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-24">
-          <div className="flex items-center">
-            <div className="flex-shrink-0 flex items-center">
+        <div className="flex items-center justify-between h-16 sm:h-20 md:h-24">
+          {/* Left side - Menu and Search */}
+          <div className="flex items-center space-x-2 sm:space-x-4">
+            <CiMenuBurger className="h-5 w-5 sm:h-6 sm:w-6 text-gray-900" />
+            <IoSearchOutline className="h-5 w-5 sm:h-6 sm:w-6 text-gray-900" />
+          </div>
+
+          {/* Center - Logo */}
+          <div className="flex-1 flex justify-center">
+            <Link to="/" className="flex items-center">
               <img
-                className="h-18 w-32 mr-2"
-                src="src/assets/sweetrepeatthrifts-high-resolution-logo-black-transparent.png"
+                className="h-12 w-32 sm:h-16 sm:w-28 md:h-18 md:w-32 "
+                src="src/assets/black.png"
                 alt="Sweet Repeats Thrift Logo"
               />
-              <h1 className="text-xl font-bold text-black"></h1>
-            </div>
-            <div className="hidden md:block">
-              <div className="ml-80 flex items-baseline space-x-4">
-                <Link
-                  to="/"
-                  className="text-black hover:text-slate-600 px-3 py-2"
-                >
-                  Home
-                </Link>
-                <Link
-                  to="/about"
-                  className="text-black hover:text-slate-600 px-3 py-2"
-                >
-                  About
-                </Link>
-                <a
-                  href="#"
-                  className="text-black hover:text-slate-600 px-3 py-2"
-                >
-                  Shop
-                </a>
-
-                <a
-                  href="#"
-                  className="text-black hover:text-slate-600 px-3 py-2"
-                >
-                  Contact
-                </a>
-              </div>
-            </div>
+            </Link>
           </div>
-          <div className="hidden md:block -m-10">
-            <button className="text-black p-1 m-3">
-              <FaOpencart className="h-6 w-6" />
-            </button>
-            <button className="text-black p-1 m-3">
-              <SlUser className="h-6 w-6" />
-            </button>
+
+          {/* Right side - Cart and User */}
+          <div className="flex items-center space-x-2 sm:space-x-4">
+            <Link to="/login" className="h-5 w-5 sm:h-6 sm:w-6 text-gray-900">
+              <SlUser className="h-5 w-5 sm:h-6 sm:w-6" />
+            </Link>
+            <Link to="/login" className="h-5 w-5 sm:h-6 sm:w-6 text-gray-900">
+              <FaOpencart className="h-5 w-5 sm:h-6 sm:w-6" />
+            </Link>
           </div>
         </div>
       </div>

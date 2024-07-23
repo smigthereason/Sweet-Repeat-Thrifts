@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-amber-50 shadow-md z-50 w-full text-black relative top-96 ">
+    <footer className="bg-customBrown shadow-md z-50 w-full text-gray-900 relative top-96 ">
     <div className="container mx-auto px-4 py-8">
       <div className="flex flex-wrap justify-between items-start">
         {/* Logo and tagline */}
@@ -23,9 +23,9 @@ const Footer: React.FC = () => {
           <h3 className="font-bold mb-2">Company</h3>
           <ul className="text-sm">
             <li><Link to="/about">About US</Link></li>
-            <li><Link to="/blogs">Blogs</Link></li>
-            <li><Link to="/careers">Careers</Link></li>
             <li><Link to="/contact">Contact</Link></li>
+            <li><Link to="/contact">Refund Policy</Link></li>
+
           </ul>
         </div>
   
@@ -34,20 +34,18 @@ const Footer: React.FC = () => {
           <h3 className="font-bold mb-2">Product</h3>
           <ul className="text-sm">
             <li><Link to="/pricing">Pricing</Link></li>
-            <li><Link to="/features">Features</Link></li>
             <li><Link to="/customers">Customers</Link></li>
-            <li><Link to="/demos">Demos</Link></li>
           </ul>
         </div>
   
         {/* Helps */}
         <div className="w-full sm:w-1/2 md:w-1/5 mb-6 md:mb-0">
-          <h3 className="font-bold mb-2">Helps</h3>
+          <h3 className="font-bold mb-2">Support</h3>
           <ul className="text-sm">
-            <li><Link to="/introduction">Introduction</Link></li>
             <li><Link to="/feedback">Feedback</Link></li>
             <li><Link to="/referrals">Referrals</Link></li>
-            <li><Link to="/network-status">Network Status</Link></li>
+            <li><Link to="/FAQ">F.A.Q</Link></li>
+
           </ul>
         </div>
   
@@ -56,9 +54,9 @@ const Footer: React.FC = () => {
           <h3 className="font-bold mb-2">Social Network</h3>
           <ul className="text-sm">
             <li><Link to="https://facebook.com">Facebook</Link></li>
-            <li><Link to="https://twitter.com">Twitter</Link></li>
-            <li><Link to="https://linkedin.com">Linkedin</Link></li>
-            <li><Link to="https://plus.google.com">Google +</Link></li>
+            <li><Link to="https://instagram.com">Instagram</Link></li>
+            <li><Link to="https://tiktok.com">TikTok</Link></li>
+
           </ul>
         </div>
       </div>

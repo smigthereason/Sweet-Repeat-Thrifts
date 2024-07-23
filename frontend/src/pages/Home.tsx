@@ -81,23 +81,30 @@ const Home: React.FC = () => {
   );
 
   return (
-    <section className="container mx-auto px-4 mt-24">
+    
+    <section className="container mx-auto px-2 relative">
       {/* Hero Banner */}
-      <div
-        className="absolute inset-0 bg-cover  "
-        style={{ backgroundImage: "url('/src/assets/poster.jpeg')" }}
-      ></div>
-      <div className="relative left-2/4 top-10 z-10 flex flex-col justify-center items-start h-full  p-8 max-w-2xl ml-16">
-        <h1 className="text-6xl font-bold text-pink-500 mb-4">New Fashion</h1>
-        <p className="text-lg mb-6">
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry the printing and typesetting industry.
+      {/* <div
+        className="absolute inset-4 bg-cover bg-center h-52"
+        
+      ><img
+      src="/src/assets/poster.jpeg"
+      alt="Hero Banner"
+      className="absolute inset-0 object-cover object-center w-full h-52
+    "
+    /></div>
+      <div className="relative z-10 flex flex-col justify-center items-start h-screen p-4 sm:p-6 md:p-8 max-w-xl sm:max-w-2xl md:max-w-3xl lg:max-w-4xl mx-auto">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-pink-500 mb-2 sm:mb-3 md:mb-4">
+          New Fashion
+        </h1>
+        <p className="text-base sm:text-lg md:text-xl mb-4 sm:mb-5 md:mb-6">
+          Revive your style, not your spending.
         </p>
-        <button className="bg-white text-black px-6 py-2 rounded-full inline-flex items-center">
+        <button className="bg-white text-black px-4 sm:px-5 md:px-6 py-2 rounded-full inline-flex items-center text-sm sm:text-base">
           SHOP NOW
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="h-5 w-5 ml-2"
+            className="h-4 w-4 sm:h-5 sm:w-5 ml-2"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -111,72 +118,41 @@ const Home: React.FC = () => {
           </svg>
         </button>
       </div>
-      <div className="absolute left-8 bottom-16 z-20 flex items-center justify-center">
-        <button className="bg-white rounded-full p-2">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-8 w-8"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M15 19l-7-7 7-7"
-            />
-          </svg>
-        </button>
-      </div>
-      <div className="absolute right-8 bottom-16 z-20 flex items-center justify-center">
-        <button className="bg-white rounded-full p-2">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-8 w-8"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M9 5l7 7-7 7"
-            />
-          </svg>
-        </button>
-      </div>
+       */}
+      
+      
 
       {/* Product Categories */}
-      <div className="grid grid-cols-3 gap-3 relative top-48">
+      <div className="grid grid-cols-1 relative top-0 p-2 sm:grid-cols-1 md:grid-cols-3 gap-10  sm:mt-4 md:mt-2">
         <div className="relative">
           {renderCarousel(carouselItems, "30%", "Flash Sale")}
         </div>
-        <div className="relative">
+        <div className="relative mt-4 sm:mt-0">
           {renderCarousel(newCarouselItems, "New Arrivals", "New Stock")}
         </div>
-
-        <div className="relative">
+        <div className="relative mt-4 md:mt-0">
           {renderCarousel(saleCarouselItems, "Hot", "Wrap-Skirt Sale")}
         </div>
       </div>
 
-      <section className="py-12 relative top-44">
-      <div className="container mx-auto px-4 text-center">
-        <h2 className="text-3xl font-bold mb-8">OUR SERVICES</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service, index) => (
-            <div key={index} className="bg-white p-6 shadow-md">
-              <h3 className="text-xl font-bold mb-4">{service.title}</h3>
-              <p>{service.description}</p>
-            </div>
-          ))}
+      <section className="py-8 sm:py-10 md:py-12 mt-8 sm:mt-12 md:mt-16">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8">
+            OUR SERVICES
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            {services.map((service, index) => (
+              <div key={index} className="bg-white p-4 sm:p-6 shadow-md">
+                <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4">
+                  {service.title}
+                </h3>
+                <p className="text-sm sm:text-base">{service.description}</p>
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
+      </section>
     </section>
-
- </section>
   );
 };
 
