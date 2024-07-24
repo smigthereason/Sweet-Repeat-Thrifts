@@ -4,18 +4,28 @@ import { SlUser } from "react-icons/sl";
 import { Link } from "react-router-dom";
 import { CiMenuBurger } from "react-icons/ci";
 import  Login  from './Login'
-
-
+import Menu from "./Menu";
 import { IoSearchOutline } from "react-icons/io5";
 
-const Navbar: React.FC = () => {
+interface NavbarProps {
+  onMenuToggle: () => void;
+}
+
+const Navbar: React.FC<NavbarProps> = ({ onMenuToggle }) => {
+  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
     <nav className="sticky top-0 bg-customBrown shadow-md z-50 w-full">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 sm:h-20 md:h-24">
           {/* Left side - Menu and Search */}
           <div className="flex items-center space-x-2 sm:space-x-4">
-            <CiMenuBurger className="h-5 w-5 sm:h-6 sm:w-6 text-gray-900" />
+            <CiMenuBurger className="h-5 w-5 sm:h-6 sm:w-6 text-gray-900" 
+                          onClick={onMenuToggle}  />
             <IoSearchOutline className="h-5 w-5 sm:h-6 sm:w-6 text-gray-900" />
           </div>
 
@@ -41,6 +51,7 @@ const Navbar: React.FC = () => {
           </div>
         </div>
       </div>
+      {isMenuOpen && <Menu isOpen={isMenuOpen} onClose={toggleMenu} />}
     </nav>
   );
 };
