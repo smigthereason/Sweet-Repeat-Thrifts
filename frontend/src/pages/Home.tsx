@@ -60,8 +60,8 @@ const Home: React.FC = () => {
       infiniteLoop
       showThumbs={false}
       showStatus={false}
-      interval={3000}
-      transitionTime={1000}
+      interval={5000}
+      transitionTime={2000}
       className="w-96 h-auto"
     >
       {items.map((item, index) => (
@@ -123,7 +123,8 @@ const Home: React.FC = () => {
       
 
       {/* Product Categories */}
-      <div className="grid grid-cols-1 relative top-0 p-2 sm:grid-cols-1 md:grid-cols-3 gap-10  sm:mt-4 md:mt-2">
+      
+      <div className="grid grid-cols-1  top-0 p-2 sm:grid-cols-1 md:grid-cols-3 gap-10  sm:mt-4 md:mt-2 ">
         <div className="relative">
           {renderCarousel(carouselItems, "30%", "Flash Sale")}
         </div>
@@ -135,7 +136,7 @@ const Home: React.FC = () => {
         </div>
       </div>
 
-      <section className="py-8 sm:py-10 md:py-12 mt-8 sm:mt-12 md:mt-16">
+      <section className=" py-8 sm:py-10 md:py-12 mt-8 sm:mt-12 md:mt-16">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8">
             OUR SERVICES

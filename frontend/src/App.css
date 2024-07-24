@@ -5,3 +5,9 @@
   text-align: center;
   overflow-x: hidden;
 }
+
+/* Add this to your CSS file */
+.scale-down {
+  transform: scale(0.9); /* Adjust the scaling factor as needed */
+}
+
