@@ -24,7 +24,7 @@ const Footer: React.FC = () => {
           <ul className="text-sm">
             <li><Link to="/about">About US</Link></li>
             <li><Link to="/contact">Contact</Link></li>
-            <li><Link to="/contact">Refund Policy</Link></li>
+            <li><Link to="/refund">Refund Policy</Link></li>
 
           </ul>
         </div>
@@ -35,6 +35,7 @@ const Footer: React.FC = () => {
           <ul className="text-sm">
             <li><Link to="/pricing">Pricing</Link></li>
             <li><Link to="/customers">Customers</Link></li>
+            <li><Link to="/bestseller">Best Seller</Link></li>
           </ul>
         </div>
   
@@ -43,7 +44,7 @@ const Footer: React.FC = () => {
           <h3 className="font-bold mb-2">Support</h3>
           <ul className="text-sm">
             <li><Link to="/feedback">Feedback</Link></li>
-            <li><Link to="/referrals">Referrals</Link></li>
+            <li><Link to="/sizechart">Size Chart</Link></li>
             <li><Link to="/FAQ">F.A.Q</Link></li>
 
           </ul>

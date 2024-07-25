@@ -141,7 +141,7 @@ const Home: React.FC = () => {
           <h2 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8">
             OUR SERVICES
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+          <div className="grid grid-cols-3 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {services.map((service, index) => (
               <div key={index} className="bg-white p-4 sm:p-6 shadow-md">
                 <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4">
